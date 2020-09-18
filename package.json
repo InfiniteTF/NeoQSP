@@ -1,0 +1,74 @@
+{
+  "name": "NeoQSP",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "node node_modules/webpack/bin/webpack.js --watch",
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist:win": "yarn compile && electron-builder --win",
+    "dist:mac": "yarn compile && electron-builder --mac",
+    "dist:linux": "yarn compile && electron-builder --linux",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "lint": "eslint --cache src/**/*.{ts,tsx}",
+    "format": "prettier --write \"src/**/!(qsp).{js,jsx,ts,tsx,scss}\""
+  },
+  "resolutions": {
+    "**/react": "16.13.1",
+    "**/react-dom": "16.13.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "bootstrap": "^4.5.2",
+    "electron-store": "^6.0.0",
+    "fs-extra": "^9.0.1",
+    "howler": "^2.2.0",
+    "lodash": "^4.17.20",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-split": "^2.0.9",
+    "source-map-loader": "^1.1.0",
+    "source-map-support": "^0.5.19",
+    "sweetalert2": "^10.2.0",
+    "ts-loader": "^8.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@types/emscripten": "^1.39.4",
+    "@types/howler": "^2.1.2",
+    "@types/imurmurhash": "^0.1.1",
+    "@types/lodash": "^4.14.161",
+    "@types/node": "^14.11.1",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "babel-loader": "^8.1.0",
+    "electron": "10.1.2",
+    "electron-builder": "^22.8.1",
+    "electron-webpack": "^2.8.2",
+    "electron-webpack-ts": "^4.0.1",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "file-loader": "^6.1.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
+    "sass-loader": "^10.0.2",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "electronWebpack": {
+    "renderer": {
+      "webpackConfig": "custom.webpack.additions.js"
+    }
+  }
+}

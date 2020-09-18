@@ -1,0 +1,56 @@
+.Dialog {
+  overflow: auto;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.container a {
+  color: rgb(106, 90, 205);
+}
+.container {
+  width: 1200px;
+  color: #000;
+  background-color: #fff;
+}
+
+#dialogwindow {
+  height: 800px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mosaic {
+  background: white !important;
+
+  .mosaic-tile {
+    margin: 0;
+  }
+
+  .mosaic-split {
+    margin: 0;
+    z-index: 5;
+    background-color: gray;
+
+    &:hover {
+      background-color: gray;
+    }
+
+    &.-row {
+      width: 2px;
+    }
+
+    &.-column {
+      height: 2px;
+    }
+  }
+
+  .mosaic-window-body {
+    background: white !important;
+  }
+
+  .mosaic-split {
+    background-color: lightgray;
+  }
+}
